@@ -1,15 +1,17 @@
+import 'package:first/view/about_view.dart';
 import 'package:first/widgets/coursecard_widget.dart';
 import 'package:first/widgets/titlecard_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class MyWidget extends StatefulWidget {
-  const MyWidget({super.key});
+class HomeView extends StatefulWidget {
+  const HomeView({super.key});
 
   @override
-  State<MyWidget> createState() => _MyWidgetState();
+  State<HomeView> createState() => _HomeViewState();
 }
 
-class _MyWidgetState extends State<MyWidget> {
+class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,6 +19,13 @@ class _MyWidgetState extends State<MyWidget> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            //
+            FilledButton(
+              onPressed: () {
+                Get.to(AboutView());
+              },
+              child: Text("Go to about page"),
+            ),
             //w1
             InkWell(
               onTap: () {
